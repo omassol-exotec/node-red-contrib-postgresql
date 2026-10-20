@@ -73,7 +73,8 @@ SELECT * FROM table WHERE id = '{{{ msg.id }}}';
 
 ### Dynamic SQL queries
 
-As an alternative to using the query template above, this node also accepts an SQL query via the `msg.query` parameter.
+The query configured in the node takes precedence over `msg.query`.
+This node only uses the SQL query passed via the `msg.query` parameter when the query configured in the node is empty.
 
 ### Parameterized query (numeric)
 
