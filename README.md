@@ -75,6 +75,8 @@ SELECT * FROM table WHERE id = '{{{ msg.id }}}';
 
 The query configured in the node takes precedence over `msg.query`.
 This node only uses the SQL query passed via the `msg.query` parameter when the query configured in the node is empty.
+When the node query is set, the outgoing `msg.query` is replaced by it as configured (the raw template, not Mustache-rendered);
+when it is empty, `msg.query` is passed through unaltered.
 
 ### Parameterized query (numeric)
 
