@@ -115,7 +115,7 @@ async function runNode(nodeQuery, inMsg) {
 	const node = new NodeCtor({ query: nodeQuery, postgreSQLConfig: 'cfg' });
 	const sent = [];
 	await node.handlers.input(inMsg, (m) => sent.push(m), () => {});
-	return { sent, executed: fakeClient.executed };
+	return { sent: sent, executed: fakeClient.executed };
 }
 
 async function itAsync(description, testFn) {
